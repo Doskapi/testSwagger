@@ -3,7 +3,7 @@ info:
   description: API para el App Server de Llevame.
   title: Llevame - App Server API
   version: 1.0.0
-host: https://t2-uber-appserver.herokuapp.com/
+host: t2-uber-appserver.herokuapp.com
 schemes:
   - http
 basePath: /api/v1
@@ -28,6 +28,434 @@ paths:
           description: "Token del usuario y code"
           schema:
             $ref: "#/definitions/DefaultResponse"
+  /users/logout:
+    post:
+      tags:
+        - appUser
+      summary: ""
+      description: |
+            Devuelve toda la información acerca de los usuarios de negocio indicados
+      security:
+        - AppToken: []
+      responses:
+        200:
+          description: "Todos los usuarios indicados"
+          schema:
+            properties:
+              metadata:
+                $ref: "#/definitions/CollectionMetadata"
+              businessUser:
+                items:
+                  $ref: '#/definitions/BusinessUser'
+        401:
+          description: Unauthorized
+          schema:
+              $ref: '#/definitions/Error'
+        500:
+          description: "Unexpected error"
+          schema:
+            $ref: "#/definitions/Error"
+  /users:
+    get:
+      tags:
+        - appUser
+      summary: ""
+      description: |
+            Devuelve toda la información acerca de los usuarios de negocio indicados
+      security:
+        - AppToken: []
+      responses:
+        200:
+          description: "Todos los usuarios indicados"
+          schema:
+            properties:
+              metadata:
+                $ref: "#/definitions/CollectionMetadata"
+              businessUser:
+                items:
+                  $ref: '#/definitions/BusinessUser'
+        401:
+          description: Unauthorized
+          schema:
+              $ref: '#/definitions/Error'
+        500:
+          description: "Unexpected error"
+          schema:
+            $ref: "#/definitions/Error"
+    post:
+      tags:
+        - appUser
+      summary: ""
+      description: |
+            Devuelve toda la información acerca de los usuarios de negocio indicados
+      security:
+        - AppToken: []
+      responses:
+        200:
+          description: "Todos los usuarios indicados"
+          schema:
+            properties:
+              metadata:
+                $ref: "#/definitions/CollectionMetadata"
+              businessUser:
+                items:
+                  $ref: '#/definitions/BusinessUser'
+        401:
+          description: Unauthorized
+          schema:
+              $ref: '#/definitions/Error'
+        500:
+          description: "Unexpected error"
+          schema:
+            $ref: "#/definitions/Error"
+    put:
+      tags:
+        - appUser
+      summary: ""
+      description: |
+            Devuelve toda la información acerca de los usuarios de negocio indicados
+      security:
+        - AppToken: []
+      responses:
+        200:
+          description: "Todos los usuarios indicados"
+          schema:
+            properties:
+              metadata:
+                $ref: "#/definitions/CollectionMetadata"
+              businessUser:
+                items:
+                  $ref: '#/definitions/BusinessUser'
+        401:
+          description: Unauthorized
+          schema:
+              $ref: '#/definitions/Error'
+        500:
+          description: "Unexpected error"
+          schema:
+            $ref: "#/definitions/Error"
+  '/trips/distance/{lat}/{long}/{destLat}/{destLong}':
+    get:
+      tags:
+        - appUser
+      summary: ""
+      description: |
+            Devuelve toda la información acerca de los usuarios de negocio indicados
+      security:
+        - AppToken: []
+      responses:
+        200:
+          description: "Todos los usuarios indicados"
+          schema:
+            properties:
+              metadata:
+                $ref: "#/definitions/CollectionMetadata"
+              businessUser:
+                items:
+                  $ref: '#/definitions/BusinessUser'
+        401:
+          description: Unauthorized
+          schema:
+              $ref: '#/definitions/Error'
+        500:
+          description: "Unexpected error"
+          schema:
+            $ref: "#/definitions/Error"
+  /trips:
+    post:
+      tags:
+        - appUser
+      summary: ""
+      description: |
+            Devuelve toda la información acerca de los usuarios de negocio indicados
+      security:
+        - AppToken: []
+      responses:
+        200:
+          description: "Todos los usuarios indicados"
+          schema:
+            properties:
+              metadata:
+                $ref: "#/definitions/CollectionMetadata"
+              businessUser:
+                items:
+                  $ref: '#/definitions/BusinessUser'
+        401:
+          description: Unauthorized
+          schema:
+              $ref: '#/definitions/Error'
+        500:
+          description: "Unexpected error"
+          schema:
+            $ref: "#/definitions/Error"
+  /trips/accept:
+    post:
+      tags:
+        - appUser
+      summary: ""
+      description: |
+            Devuelve toda la información acerca de los usuarios de negocio indicados
+      security:
+        - AppToken: []
+      responses:
+        200:
+          description: "Todos los usuarios indicados"
+          schema:
+            properties:
+              metadata:
+                $ref: "#/definitions/CollectionMetadata"
+              businessUser:
+                items:
+                  $ref: '#/definitions/BusinessUser'
+        401:
+          description: Unauthorized
+          schema:
+              $ref: '#/definitions/Error'
+        500:
+          description: "Unexpected error"
+          schema:
+            $ref: "#/definitions/Error"
+  /trips/finish:
+    post:
+      tags:
+        - appUser
+      summary: ""
+      description: |
+            Devuelve toda la información acerca de los usuarios de negocio indicados
+      security:
+        - AppToken: []
+      responses:
+        200:
+          description: "Todos los usuarios indicados"
+          schema:
+            properties:
+              metadata:
+                $ref: "#/definitions/CollectionMetadata"
+              businessUser:
+                items:
+                  $ref: '#/definitions/BusinessUser'
+        401:
+          description: Unauthorized
+          schema:
+              $ref: '#/definitions/Error'
+        500:
+          description: "Unexpected error"
+          schema:
+            $ref: "#/definitions/Error"
+  '/trips/estimate/{lat}/{long}/{destLat}/{destLong}':
+    get:
+      tags:
+        - appUser
+      summary: ""
+      description: |
+            Devuelve toda la información acerca de los usuarios de negocio indicados
+      security:
+        - AppToken: []
+      responses:
+        200:
+          description: "Todos los usuarios indicados"
+          schema:
+            properties:
+              metadata:
+                $ref: "#/definitions/CollectionMetadata"
+              businessUser:
+                items:
+                  $ref: '#/definitions/BusinessUser'
+        401:
+          description: Unauthorized
+          schema:
+              $ref: '#/definitions/Error'
+        500:
+          description: "Unexpected error"
+          schema:
+            $ref: "#/definitions/Error"
+  /drivers/position:
+    post:
+      tags:
+        - appUser
+      summary: ""
+      description: |
+            Devuelve toda la información acerca de los usuarios de negocio indicados
+      security:
+        - AppToken: []
+      responses:
+        200:
+          description: "Todos los usuarios indicados"
+          schema:
+            properties:
+              metadata:
+                $ref: "#/definitions/CollectionMetadata"
+              businessUser:
+                items:
+                  $ref: '#/definitions/BusinessUser'
+        401:
+          description: Unauthorized
+          schema:
+              $ref: '#/definitions/Error'
+        500:
+          description: "Unexpected error"
+          schema:
+            $ref: "#/definitions/Error"
+  /drivers/:
+    get:
+      tags:
+        - appUser
+      summary: ""
+      description: |
+            Devuelve toda la información acerca de los usuarios de negocio indicados
+      security:
+        - AppToken: []
+      responses:
+        200:
+          description: "Todos los usuarios indicados"
+          schema:
+            properties:
+              metadata:
+                $ref: "#/definitions/CollectionMetadata"
+              businessUser:
+                items:
+                  $ref: '#/definitions/BusinessUser'
+        401:
+          description: Unauthorized
+          schema:
+              $ref: '#/definitions/Error'
+        500:
+          description: "Unexpected error"
+          schema:
+            $ref: "#/definitions/Error"
+  /cars:
+    get:
+      tags:
+        - appUser
+      summary: ""
+      description: |
+            Devuelve toda la información acerca de los usuarios de negocio indicados
+      security:
+        - AppToken: []
+      responses:
+        200:
+          description: "Todos los usuarios indicados"
+          schema:
+            properties:
+              metadata:
+                $ref: "#/definitions/CollectionMetadata"
+              businessUser:
+                items:
+                  $ref: '#/definitions/BusinessUser'
+        401:
+          description: Unauthorized
+          schema:
+              $ref: '#/definitions/Error'
+        500:
+          description: "Unexpected error"
+          schema:
+            $ref: "#/definitions/Error"
+    post:
+      tags:
+        - appUser
+      summary: ""
+      description: |
+            Devuelve toda la información acerca de los usuarios de negocio indicados
+      security:
+        - AppToken: []
+      responses:
+        200:
+          description: "Todos los usuarios indicados"
+          schema:
+            properties:
+              metadata:
+                $ref: "#/definitions/CollectionMetadata"
+              businessUser:
+                items:
+                  $ref: '#/definitions/BusinessUser'
+        401:
+          description: Unauthorized
+          schema:
+              $ref: '#/definitions/Error'
+        500:
+          description: "Unexpected error"
+          schema:
+            $ref: "#/definitions/Error"
+  '/cars/{carId}':
+    get:
+      tags:
+        - appUser
+      summary: ""
+      description: |
+            Devuelve toda la información acerca de los usuarios de negocio indicados
+      security:
+        - AppToken: []
+      responses:
+        200:
+          description: "Todos los usuarios indicados"
+          schema:
+            properties:
+              metadata:
+                $ref: "#/definitions/CollectionMetadata"
+              businessUser:
+                items:
+                  $ref: '#/definitions/BusinessUser'
+        401:
+          description: Unauthorized
+          schema:
+              $ref: '#/definitions/Error'
+        500:
+          description: "Unexpected error"
+          schema:
+            $ref: "#/definitions/Error"
+    put:
+      tags:
+        - appUser
+      summary: ""
+      description: |
+            Devuelve toda la información acerca de los usuarios de negocio indicados
+      security:
+        - AppToken: []
+      responses:
+        200:
+          description: "Todos los usuarios indicados"
+          schema:
+            properties:
+              metadata:
+                $ref: "#/definitions/CollectionMetadata"
+              businessUser:
+                items:
+                  $ref: '#/definitions/BusinessUser'
+        401:
+          description: Unauthorized
+          schema:
+              $ref: '#/definitions/Error'
+        500:
+          description: "Unexpected error"
+          schema:
+            $ref: "#/definitions/Error"
+    delete:
+      tags:
+        - appUser
+      summary: ""
+      description: |
+            Devuelve toda la información acerca de los usuarios de negocio indicados
+      security:
+        - AppToken: []
+      responses:
+        200:
+          description: "Todos los usuarios indicados"
+          schema:
+            properties:
+              metadata:
+                $ref: "#/definitions/CollectionMetadata"
+              businessUser:
+                items:
+                  $ref: '#/definitions/BusinessUser'
+        401:
+          description: Unauthorized
+          schema:
+              $ref: '#/definitions/Error'
+        500:
+          description: "Unexpected error"
+          schema:
+            $ref: "#/definitions/Error"
+
 definitions:
   Code:
     type: number
