@@ -1,0 +1,45 @@
+swagger: '2.0'
+info:
+  description: API para el App Server de Llevame.
+  title: Llevame - App Server API
+  version: 1.0.0
+host: https://t2-uber-appserver.herokuapp.com/
+schemes:
+  - http
+basePath: /api/v1/
+securityDefinitions:
+  AppToken:
+    type: apiKey
+    in: header
+    name: Authorization
+tags:
+  - name: appUser
+    description: Los conductores y pasajeros de la aplicacion
+paths:
+  /users/login:
+    post:
+      tags:
+        - appUser
+      summary: "Logearse al sistema"
+      description: |
+            Se loguea al sistena y nos devuelve el token del usuario.
+      security:
+        - AppToken: []
+      responses:
+        200:
+          description: "Token del usuario y code"
+          schema:
+            $ref: "#/definitions/DefaultResponse"
+definitions:
+  Code:
+    type: number
+    description: Code es el resultado de error 1 (data correcta) o 0 (data incorrecta)
+  Data:
+    type: object
+  DefaultResponse:
+    type: object
+    properties:
+      code:
+        $ref: '#/definitions/Code'
+      data:
+        $ref: '#/definitions/Data'
