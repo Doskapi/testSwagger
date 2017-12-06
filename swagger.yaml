@@ -35,7 +35,8 @@ definitions:
     type: number
     description: Code es el resultado de error 1 (data correcta) o 0 (data incorrecta)
   Data:
-    type: object
+    type: string
+    description: Code es el resultado de error 1 (data correcta) o 0 (data incorrecta)
   DefaultResponse:
     type: object
     properties:
